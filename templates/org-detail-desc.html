@@ -1,0 +1,14 @@
+{% extends 'org_base.html' %}
+{% block title %}分类介绍 | 易维科技知识库{% endblock %}
+{% block page_path %}分类介绍{% endblock %}
+{% load staticfiles %}
+{% block right_form %}
+<div class="right companycenter layout" >
+        <div class="head">
+            <h1>分类介绍</h1>
+        </div>
+        <div class="des">
+            {{ course_org.desc }}
+        </div>
+    </div>
+{% endblock %}

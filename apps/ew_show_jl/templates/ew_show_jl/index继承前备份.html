@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en"  id="Content">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <title>智慧水务企业门户</title>
+    <script src="{% static 'ew_show_jl/js/rem.js' %}"></script>
+    <!--<script src="//at.alicdn.com/t/font_1452221_6viclqqf148.js' %}"></script>-->
+    <link rel="stylesheet" href="{% static 'ew_show_jl/css/menhu.css' %}" type="text/css"> </link>
+</head>
+
+<body >
+<div class="header">
+    <div class="container">
+        <div class="logo"><a href="####"><img src="{% static 'ew_show_jl/images/logo.png' %}"></a></div>
+        <div class="title">智慧水务企业门户</div>
+        <div class="info"><a style="float: right;margin-left: 0.2rem;" id="BtnFullOpen" href="javascript:void(0);" title="全屏显示" ></i><img style="width: 0.25rem; margin-right: 0.1rem; margin-top: 0.26rem;" src="{% static 'ew_show_jl/images/full.png' %}" alt="全屏"></a><div id="cont"></div></div>
+    </div>
+</div>
+<div class="mt-tabpage" js-tab="2">
+    <div class="mt-tabpage-title">
+        <a href="javascript:;" class="mt-tabpage-item mt-tabpage-item-cur" id="tab1">
+            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-yingyong"></use></svg>  应用中心</a>
+        <a href="javascript:;" class="mt-tabpage-item"  id="tab2">
+            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-wulianwang"></use></svg>  物联网导航</a>
+        <a href="javascript:;" class="mt-tabpage-item"  id="tab3">
+            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-RectangleCopy"></use></svg>  指标中心</a>
+        <a href="javascript:;" class="mt-tabpage-item"  id="tab4">
+            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-report"></use></svg>  报表中心</a>
+        <a href="../zhgj" target="myname" class="mt-tabpage-item"  id="tab5">
+            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-ziyuan"></use></svg>  智慧管件</a>
+    </div>
+    <div class="one">
+        <div class="left">
+            <div class="list list0">
+                <div class="title"> <span>|</span>决策指挥中心</div>
+                <ul>
+                    <a href="http://101.132.156.241:8080/" target="myname"><li class="" style="background: #052232;"><img src="{% static 'ew_show_jl/images/scdd.png' %}"><p>智慧化驾驶舱</p></li></a>
+                    <a href="../sp" target="myname"><li style="background: #017199;"><img src="{% static 'ew_show_jl/images/hg.png' %}"><p>智慧水务宏观介绍</p></li></a>
+                    <a href="../css" target="myname"><li style="background: #8ec1d2;"><img src="{% static 'ew_show_jl/images/ksh.png' %}"><p>长输水</p></li></a>
+                    <a href="../gw" target="myname"><li style="background: #a097c2;"><img src="{% static 'ew_show_jl/images/ksh.png' %}"><p>管网可视化</p></li></a>
+                    <a href="../baoguanfenxi" target="myname"><li style="background: #6db89a;"><img src="{% static 'ew_show_jl/images/bgfx.png' %}"><p>爆管分析</p></li></a>
+                </ul>
+            </div>
+            <div class="list list1">
+                <div class="title"> <span>|</span>生产管理体系</div>
+                <ul>
+                    <a href="http://124.165.211.61:9103/login.jsp" target="myname"><li style="background: #007098;"><img src="{% static 'ew_show_jl/images/gongshui.png' %}"><p>一体化生产调度系统</p></li></a>
+                    <a href="http://in.cdzhswpt.com:9310/ssoserver/login?service=http%3A%2F%2Fgis.cdzhswpt.com%3A9351%2F" target="myname"><li style="background: #6db89a;"><img src="{% static 'ew_show_jl/images/gldl.png' %}"><p>地理信息信息系统</p></li></a>
+                    <a target="myname"><li style="background: #d0d98a;"><img src="{% static 'ew_show_jl/images/ykbz.png' %}"><p>统一远传平台-小口径水表</p></li></a>
+                    <a  target="myname"><li style="background: #062331;"><img src="{% static 'ew_show_jl/images/ykbz.png' %}"><p>统一远传平台-小口径水表</p></li></a>
+                    <a href="http://221.234.33.109:10010/login.jsp" target="myname"><li style="background: #b3d4dd;"><img src="{% static 'ew_show_jl/images/lsgk.png' %}"><p>产销差综合管理系统</p></li></a>
+                    <a href="http://119.97.214.18:1142/eg/main.html" target="myname"><li style="background: #8ec1d2;"><img src="{% static 'ew_show_jl/images/ecjy.png' %}"><p>二次加压管控系统</p></li></a>
+                    <a target="myname"><li style="background: #6b88b4;"><img src="{% static 'ew_show_jl/images/shuizhiguanli.png' %}"><p>水质管理系统</p></li></a>
+                </ul>
+            </div>
+
+            <div class="list list2">
+                <div class="title"><span>|</span>营销管理体系</div>
+                <ul>
+                    <a href="http://119.97.214.18:1314/watererp/index.jsp#/app/sysbase" target="myname"><li style="background: #301003;"><img src="{% static 'ew_show_jl/images/yysf.png' %}"><p>营业收费模块</p></li></a>
+                    <a href="http://119.97.214.18:38092/gzst/index.jsp" target="myname"><li style="background: #896646;"><img src="{% static 'ew_show_jl/images/ykbz.png' %}"><p>业扩报装模块</p></li></a>
+                    <a href="http://119.97.214.18:1195/ssoserver/login?service=http%3A%2F%2F119.97.214.18%3A1199%2F" target="myname"><li style="background: #b3a18d;"><img src="{% static 'ew_show_jl/images/gsrx.png' %}"><p>供水热线模块</p></li></a>
+                    <a  target="myname"><li style="background: #9fa5a1;"><img src="{% static 'ew_show_jl/images/icon-yscgyt.png' %}"><p>计量管理平台</p></li></a>
+                    <a  target="myname"><li style="background: #b0afb4;"><img src="{% static 'ew_show_jl/images/bwgl.png' %}"><p>表务管理模块</p></li></a>
+                    <a  target="myname"><li style="background: #a29988;"><img src="{% static 'ew_show_jl/images/jcgl.png' %}"><p>稽查管理模块</p></li></a>
+                    <a  target="myname"><li style="background: #a57e7f;"><img src="{% static 'ew_show_jl/images/gsrx.png' %}"><p>互联网+营业厅</p></li></a>
+                    <a target="myname"><li style="background: #666467;"><img src="{% static 'ew_show_jl/images/ckgl.png' %}"><p>仓储管理系统</p></li></a>
+                    <a  target="myname"><li style="background: #7d8b72;"><img src="{% static 'ew_show_jl/images/ydpt.png' %}"><p>移动抄表平台</p></li></a>
+                </ul>
+            </div>
+
+            <div class="list list3">
+                <div class="title"><span>|</span>企业综合管理体系</div>
+                <ul>
+                    <a  target="myname"><li style="background: #f5aaaf;"><img src="{% static 'ew_show_jl/images/cwgl.png' %}"><p>财务管理系统</p></li></a>
+                    <a target="myname"><li style="background: #f1a196;"><img src="{% static 'ew_show_jl/images/ysgl.png' %}"><p>预算管理系统</p></li></a>
+                    <a  target="myname"><li style="background: #ead0d3;"><img src="{% static 'ew_show_jl/images/dagl.png' %}"><p>档案管理系统</p></li></a>
+                    <a target="myname"><li style="background: #f1a293;"><img src="{% static 'ew_show_jl/images/sjgl.png' %}"><p>审计管理系统</p></li></a>
+                    <a  target="myname"><li style="background: #a57e7f;"><img src="{% static 'ew_show_jl/images/zcgl.png' %}"><p>资产管理系统</p></li></a>
+                    <a  target="myname"><li style="background: #e9cbd5;"><img src="{% static 'ew_show_jl/images/tjjc.png' %}"><p>统计决策系统</p></li></a>
+                    <a  target="myname"><li style="background: #e9cbd5;"><img src="{% static 'ew_show_jl/images/hr.png' %}"><p>人力资源管理系统</p></li></a>
+                    <a  target="myname"><li style="background: #cfbdd7;"><img src="{% static 'ew_show_jl/images/qyxt.png' %}"><p>企业协同办公系统</p></li></a>
+                </ul>
+            </div>
+        </div>
+        <div class="right" >
+            <div class="title"><span>|</span>待办事务</div>
+            <div class="list">
+                <ul>
+                    <li><span class="blue" style="background: #017199">表务</span><a href="####" target="_blank">【2019年5月】到期水表365只，需要周期换表</a><em>2019-05-26</em></li>
+                    <li><span class="blue" style="background: #a097c2">银行代收</span><a href="####" target="_blank">【2019年5月第二批工商银行】托收批次审核</a><em>2019-05-13</em></li>
+                    <li><span class="blue" style="background: #6db89a">报装</span><a href="####" target="_blank">【0100008755张文明】报装已经缴费，需要施工</a><em>2019-05-10</em></li>
+                    <li><span class="blue" style="background: #8ec1d2">实验室</span><a href="####" target="_blank">【2015年5月】实验室3#小表检测台到期检测</a><em>2019-05-07</em></li>
+                    <li><span class="gree" style="background: #6b88b4">营业收费</span><a href="####" target="_blank">【0100003456 市六中】滞纳金减免需要流程处理</a><em>2019-04-12</em></li>
+                    <li><span class="gree" style="background: #896646">报装</span><a href="####" target="_blank">【0100003456恒信小区5#楼】提交报装申请，需要查勘</a><em>2019-04-02</em></li>
+                    <li><span class="red" style="background: #7d8b72">催收</span><a href="####" target="_blank">【2019年5月南区居民户】需要短信催收</a><em>2019-03-18</em></li>
+                </ul>
+            </div>
+
+            <div class="title" style="margin-top: 0.3rem;"><span>|</span>预警及告警</div>
+            <div class="list">
+                <ul>
+                    <li><span class="blue" style="background: #a57e7f">压力预警</span><a href="####" target="_blank">【花溪路武陵区教委】供水压力不足，请检查</a><em>2019-09-12</em></li>
+                    <li><span class="blue" style="background: #f5aaaf">流量异常预警</span><a href="####" target="_blank">【新远小区3#号考核表】供水流量考核超过30%，请检查</a><em>2019-08-23</em></li>
+                    <li><span class="blue" style="background: #f1a196">水质预警</span><a href="####" target="_blank">【临海公园杨林路口】余氯超标，请检查</a><em>2019-07-11</em></li>
+                    <li><span class="blue" style="background: #f1a293">电池告警</span><a href="####" target="_blank">【兰奇桥5#检测点】剩余电池量不足，请安排更换</a><em>2019-07-06</em></li>
+                    <li><span class="blue" style="background: #e9cbd5">安全预警</span><a href="####" target="_blank">【洪武路二次供水泵站】提示未刷卡进入人员，请检查</a><em>2019-06-03</em></li>
+                    <li><span class="red" style="background: #f60">服务超时告警</span><a href="####" target="_blank">【香园路】14：20反应的违章尚未反馈处理结果，请核实</a><em>2019-06-17</em></li>
+                    <li><span class="red" style="background: #f60">服务超时告警</span><a href="####" target="_blank">【云明路江津街路口】泄漏尚未及时处理，请核实</a><em>2019-05-19</em></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="two">
+        <div class="text text1"><a href="zhgj.html" target="myname" title="智慧管件"><img src="{% static 'ew_show_jl/images/hotpoint.png' %}"></a></div>
+        <div class="text text2"><a href="http://124.165.211.61:9103/login.jsp" target="myname" title="自来水厂"><img src="{% static 'ew_show_jl/images/hotpoint.png' %}"></a></div>
+        <div class="text text3"><a href="http://124.165.211.61:9103/login.jsp" target="myname" title="压力计"><img src="{% static 'ew_show_jl/images/hotpoint.png' %}"></a></div>
+        <div class="text text4"><a href="http://124.165.211.61:9103/login.jsp" target="myname" title="流量计"><img src="{% static 'ew_show_jl/images/hotpoint.png' %}"></a></div>
+        <div class="text text5"><a href="http://124.165.211.61:9103/login.jsp" target="myname" title="水质检测"><img src="{% static 'ew_show_jl/images/hotpoint.png' %}"></a></div>
+        <div class="text text6"><a href="http://221.234.33.109:10010/login.jsp" target="myname" title="分区计量"><img src="{% static 'ew_show_jl/images/hotpoint.png' %}"></a></div>
+        <div class="text text7"><a href="http://124.165.211.61:9103/login.jsp" target="myname" title="污水厂"><img src="{% static 'ew_show_jl/images/hotpoint.png' %}"></a></div>
+        <div class="text text8"><a href="http://in.cdzhswpt.com:9310/ssoserver/login?service=http%3A%2F%2Fgis.cdzhswpt.com%3A9351%2F" target="myname" title="供水管网"><img src="{% static 'ew_show_jl/images/hotpoint.png' %}"></a></div>
+        <div class="text text9"><a href="a.html" target="myname" title="电动阀门"><img src="{% static 'ew_show_jl/images/hotpoint.png' %}"></a></div>
+        <div class="text text10"><a href="http://124.165.211.61:9103/login.jsp" target="myname" title="水源地"><img src="{% static 'ew_show_jl/images/hotpoint.png' %}"></a></div>
+    </div>
+    <div class="three"><center style="height: 500px; line-height: 500px; font-size: 0.18rem;">暂无指标数据3</center>
+        {% block config_file %}
+        <script type="text/javascript" src="{% static 'ew_show_jl/dashing-config.js' %}"></script>
+        {% endblock %}
+    </div>
+    <div class="four"><center style="height: 500px; line-height: 500px; font-size: 0.18rem;">暂无报表数据</center></div>
+    <div class="five"><center style="height: 500px; line-height: 500px; font-size: 0.18rem;">暂无数据</center></div>
+</div>
+<div class="footer">
+    <div class="container">
+        Copyright @ 2019. All Rights Reserved. 易维科技股份有限公司
+    </div>
+</div>
+<script src="{% static 'ew_show_jl/js/jquery1.9.1.js' %}"></script>
+<script src="{% static 'ew_show_jl/js/mt-tabpage.js' %}"></script>
+<script>
+
+    $(function(){
+        var oBtnFullOpen = document.getElementById('BtnFullOpen');
+        var oContent = document.getElementById('Content');
+        oBtnFullOpen.onclick = function() {
+            fullScreen(oContent);
+            oBtnFullOpen.setAttribute("style", "display:none");
+        }
+    })
+
+
+    function fullScreen(el) {
+        var rfs = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullScreen,
+                wscript;
+
+        if(typeof rfs != "undefined" && rfs) {
+            rfs.call(el);
+            return;
+        }
+
+        if(typeof window.ActiveXObject != "undefined") {
+            wscript = new ActiveXObject("WScript.Shell");
+            if(wscript) {
+                wscript.SendKeys("{F11}");
+            }
+        }
+    }
+
+    function exitFullScreen(el) {
+        var el= document,
+                cfs = el.cancelFullScreen || el.webkitCancelFullScreen || el.mozCancelFullScreen || el.exitFullScreen,
+                wscript;
+
+        if (typeof cfs != "undefined" && cfs) {
+            cfs.call(el);
+            return;
+        }
+
+        if (typeof window.ActiveXObject != "undefined") {
+            wscript = new ActiveXObject("WScript.Shell");
+            if (wscript != null) {
+                wscript.SendKeys("{F11}");
+            }
+        }
+    }
+</script>
+<script>
+    $(function () {
+        $('[js-tab=2]').tab({
+            curDisplay: 1,
+            changeMethod: 'horizontal'
+        });
+        $(".two, .three,.four,.five").hide();
+        $("#tab1").click(function(){
+            $(".one").fadeIn();
+            $(".two, .three,.four,.five").fadeOut();
+        })
+        $("#tab2").click(function(){
+            $(".two").fadeIn();
+            $(".one, .three,.four,.five").fadeOut();
+        })
+        $("#tab3").click(function(){
+            $(".three").fadeIn();
+            $(".one, .two,.four,.five").fadeOut();
+        })
+        $("#tab4").click(function(){
+            $(".four").fadeIn();
+            $(".one, .two,.three,.five").fadeOut();
+        })
+
+    });
+</script>
+<script type="text/javascript">
+    var tew=document.getElementById('cont')
+    // ti.innerHTML="你好";
+    function getTime(){     	//获取时间
+        var date=new Date();
+
+        var year=date.getFullYear();
+        var month=date.getMonth() + 1;
+        var day=date.getDate();
+
+        var hour=date.getHours();
+        var minute=date.getMinutes();
+        var second=date.getSeconds();
+
+        //这样写显示时间在1~9会挤占空间；所以要在1~9的数字前补零;
+        if (hour<10) {
+            hour='0'+hour;
+        }
+        if (minute<10) {
+            minute='0'+minute;
+        }
+        if (second<10) {
+            second='0'+second;
+        }
+        var x=date.getDay();//获取星期
+        if(x == "1"){
+            x= "一"
+        } else if(x == "2"){
+            x= "二"
+        }else if(x == "3"){
+            x= "三"
+        }else if(x == "4"){
+            x= "四"
+        }
+        else if(x == "5"){
+            x= "五"
+        }
+        else if(x == "6"){
+            x= "六"
+        }
+        else if(x == "7"){
+            x= "日"
+        }
+        var time=year+'年'+month+'月'+day+'日  ' +"星期"+ x+"  " +hour+':'+minute+':'+second
+        tew.innerHTML=time;//将时间显示在div内
+    }
+    getTime();
+    setInterval(getTime,1000);
+
+</script>
+</body>
+</html>

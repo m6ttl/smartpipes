@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>charts</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <style>
+        *{margin: 0; padding: 0;}
+        body,html{width: 100%;height: 100%;}
+        html {  height: 100%;-webkit-text-size-adjust:none;word-wrap:break-word  }
+        .head{background: rgba(0,159,231); width: 100%; height: 40px; line-height: 40px; color: #fff; text-align: center;}
+        .chart{ width: 32%; height: 300px; border: 1px solid #ddd; margin-top: 20px;  margin-left: 10px; text-align: center;}
+    </style>
+</head>
+<body>
+    <div class="head">标题栏</div>
+    <div class="chart" id="chart1">{{chart1|safe}}</div>
+    <div class="chart" id="chart2">{{chart2|safe}}</div>
+    <div class="chart" id="chart3">{{chart3|safe}}</div>
+</body>
+</html>

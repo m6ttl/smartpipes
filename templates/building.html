@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block titile %}
+功能建设中
+{% endblock %}
+
+{% load staticfiles %}
+<!--crumbs start-->
+{% block custom_bread %}
+    <section>
+        <div class="wp">
+            <ul  class="crumbs">
+                <li><a href="{% url 'index' %}">首页</a>></li>
+                <li>功能建设中</li>
+            </ul>
+        </div>
+    </section>
+{% endblock %}
+
+
+{% block content %}
+    功能建设中、请期待。。。。。。
+
+    {{ request.user.nick_name|default_if_none:'' }}
+
+
+    <li>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：
+        <input class="borderno" type="text" name="email" readonly="readonly" value="{{ request.user.email }}"/>
+        <span class="green changeemai_btn">[修改]</span>
+    </li>
+{% endblock %}
+
+{% block custom_js %}
+{% endblock %}

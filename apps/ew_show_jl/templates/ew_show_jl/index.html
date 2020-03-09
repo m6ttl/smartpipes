@@ -1,0 +1,149 @@
+
+{% extends 'smartpipebase.html' %}
+{% load static %}
+
+{% block titile %} 智慧水务企业门户 {% endblock %}
+{% block custom_css %}<link rel="stylesheet" href="{% static 'ew_show_jl/css/menhu.css' %}" type="text/css"> </link> {% endblock %}
+
+{% block content %}
+    <div class="mt-tabpage" js-tab="2">
+         <div class="info" style="display: none">
+             <a style="float: right;margin-left: 0.2rem;" id="BtnFullOpen" href="javascript:void(0);" title="全屏显示" ></a>
+         </div>
+        <div class="one">
+            <div class="left">
+                <div class="list list0">
+                    <div class="title"> <span>|</span>决策指挥中心</div>
+                    <ul>
+                        <a href="http://101.132.156.241:8080/" target="myname"><li class="" style="background: #052232;"><img src="{% static 'ew_show_jl/images/scdd.png' %}"><p>智慧化驾驶舱</p></li></a>
+                        <a href="../sp" target="myname"><li style="background: #017199;"><img src="{% static 'ew_show_jl/images/hg.png' %}"><p>智慧水务宏观介绍</p></li></a>
+                        <a href="../css" target="myname"><li style="background: #8ec1d2;"><img src="{% static 'ew_show_jl/images/ksh.png' %}"><p>长输水</p></li></a>
+                        <a href="../gw" target="myname"><li style="background: #a097c2;"><img src="{% static 'ew_show_jl/images/ksh.png' %}"><p>管网可视化</p></li></a>
+                        <a href="../baoguanfenxi" target="myname"><li style="background: #6db89a;"><img src="{% static 'ew_show_jl/images/bgfx.png' %}"><p>爆管分析</p></li></a>
+                    </ul>
+                </div>
+                <div class="list list1">
+                    <div class="title"> <span>|</span>生产管理体系</div>
+                    <ul>
+                        <a href="http://124.165.211.61:9103/login.jsp" target="myname"><li style="background: #007098;"><img src="{% static 'ew_show_jl/images/gongshui.png' %}"><p>一体化生产调度系统</p></li></a>
+                        <a href="http://in.cdzhswpt.com:9310/ssoserver/login?service=http%3A%2F%2Fgis.cdzhswpt.com%3A9351%2F" target="myname"><li style="background: #6db89a;"><img src="{% static 'ew_show_jl/images/gldl.png' %}"><p>地理信息信息系统</p></li></a>
+                        <a target="myname"><li style="background: #d0d98a;"><img src="{% static 'ew_show_jl/images/ykbz.png' %}"><p>统一远传平台-小口径水表</p></li></a>
+                        <a  target="myname"><li style="background: #062331;"><img src="{% static 'ew_show_jl/images/ykbz.png' %}"><p>统一远传平台-小口径水表</p></li></a>
+                        <a href="http://221.234.33.109:10010/login.jsp" target="myname"><li style="background: #b3d4dd;"><img src="{% static 'ew_show_jl/images/lsgk.png' %}"><p>产销差综合管理系统</p></li></a>
+                        <a href="http://119.97.214.18:1142/eg/main.html" target="myname"><li style="background: #8ec1d2;"><img src="{% static 'ew_show_jl/images/ecjy.png' %}"><p>二次加压管控系统</p></li></a>
+                        <a target="myname"><li style="background: #6b88b4;"><img src="{% static 'ew_show_jl/images/shuizhiguanli.png' %}"><p>水质管理系统</p></li></a>
+                    </ul>
+                </div>
+
+                <div class="list list2">
+                    <div class="title"><span>|</span>营销管理体系</div>
+                    <ul>
+                        <a href="http://119.97.214.18:1314/watererp/index.jsp#/app/sysbase" target="myname"><li style="background: #301003;"><img src="{% static 'ew_show_jl/images/yysf.png' %}"><p>营业收费模块</p></li></a>
+                        <a href="http://119.97.214.18:38092/gzst/index.jsp" target="myname"><li style="background: #896646;"><img src="{% static 'ew_show_jl/images/ykbz.png' %}"><p>业扩报装模块</p></li></a>
+                        <a href="http://119.97.214.18:1195/ssoserver/login?service=http%3A%2F%2F119.97.214.18%3A1199%2F" target="myname"><li style="background: #b3a18d;"><img src="{% static 'ew_show_jl/images/gsrx.png' %}"><p>供水热线模块</p></li></a>
+                        <a  target="myname"><li style="background: #9fa5a1;"><img src="{% static 'ew_show_jl/images/icon-yscgyt.png' %}"><p>计量管理平台</p></li></a>
+                        <a  target="myname"><li style="background: #b0afb4;"><img src="{% static 'ew_show_jl/images/bwgl.png' %}"><p>表务管理模块</p></li></a>
+                        <a  target="myname"><li style="background: #a29988;"><img src="{% static 'ew_show_jl/images/jcgl.png' %}"><p>稽查管理模块</p></li></a>
+                        <a  target="myname"><li style="background: #a57e7f;"><img src="{% static 'ew_show_jl/images/gsrx.png' %}"><p>互联网+营业厅</p></li></a>
+                        <a target="myname"><li style="background: #666467;"><img src="{% static 'ew_show_jl/images/ckgl.png' %}"><p>仓储管理系统</p></li></a>
+                        <a  target="myname"><li style="background: #7d8b72;"><img src="{% static 'ew_show_jl/images/ydpt.png' %}"><p>移动抄表平台</p></li></a>
+                    </ul>
+                </div>
+
+                <div class="list list3">
+                    <div class="title"><span>|</span>企业综合管理体系</div>
+                    <ul>
+                        <a  target="myname"><li style="background: #f5aaaf;"><img src="{% static 'ew_show_jl/images/cwgl.png' %}"><p>财务管理系统</p></li></a>
+                        <a target="myname"><li style="background: #f1a196;"><img src="{% static 'ew_show_jl/images/ysgl.png' %}"><p>预算管理系统</p></li></a>
+                        <a  target="myname"><li style="background: #ead0d3;"><img src="{% static 'ew_show_jl/images/dagl.png' %}"><p>档案管理系统</p></li></a>
+                        <a target="myname"><li style="background: #f1a293;"><img src="{% static 'ew_show_jl/images/sjgl.png' %}"><p>审计管理系统</p></li></a>
+                        <a  target="myname"><li style="background: #a57e7f;"><img src="{% static 'ew_show_jl/images/zcgl.png' %}"><p>资产管理系统</p></li></a>
+                        <a  target="myname"><li style="background: #e9cbd5;"><img src="{% static 'ew_show_jl/images/tjjc.png' %}"><p>统计决策系统</p></li></a>
+                        <a  target="myname"><li style="background: #e9cbd5;"><img src="{% static 'ew_show_jl/images/hr.png' %}"><p>人力资源管理系统</p></li></a>
+                        <a  target="myname"><li style="background: #cfbdd7;"><img src="{% static 'ew_show_jl/images/qyxt.png' %}"><p>企业协同办公系统</p></li></a>
+                    </ul>
+                </div>
+            </div>
+            <div class="right" >
+                <div class="title"><span>|</span>待办事务</div>
+                <div class="list">
+                    <ul>
+                        <li><span class="blue" style="background: #017199">表务</span><a href="####" target="_blank">【2019年5月】到期水表365只，需要周期换表</a><em>2019-05-26</em></li>
+                        <li><span class="blue" style="background: #a097c2">银行代收</span><a href="####" target="_blank">【2019年5月第二批工商银行】托收批次审核</a><em>2019-05-13</em></li>
+                        <li><span class="blue" style="background: #6db89a">报装</span><a href="####" target="_blank">【0100008755张文明】报装已经缴费，需要施工</a><em>2019-05-10</em></li>
+                        <li><span class="blue" style="background: #8ec1d2">实验室</span><a href="####" target="_blank">【2015年5月】实验室3#小表检测台到期检测</a><em>2019-05-07</em></li>
+                        <li><span class="gree" style="background: #6b88b4">营业收费</span><a href="####" target="_blank">【0100003456 市六中】滞纳金减免需要流程处理</a><em>2019-04-12</em></li>
+                        <li><span class="gree" style="background: #896646">报装</span><a href="####" target="_blank">【0100003456恒信小区5#楼】提交报装申请，需要查勘</a><em>2019-04-02</em></li>
+                        <li><span class="red" style="background: #7d8b72">催收</span><a href="####" target="_blank">【2019年5月南区居民户】需要短信催收</a><em>2019-03-18</em></li>
+                    </ul>
+                </div>
+
+                <div class="title" style="margin-top: 0.3rem;"><span>|</span>预警及告警</div>
+                <div class="list">
+                    <ul>
+                        <li><span class="blue" style="background: #a57e7f">压力预警</span><a href="####" target="_blank">【花溪路武陵区教委】供水压力不足，请检查</a><em>2019-09-12</em></li>
+                        <li><span class="blue" style="background: #f5aaaf">流量异常预警</span><a href="####" target="_blank">【新远小区3#号考核表】供水流量考核超过30%，请检查</a><em>2019-08-23</em></li>
+                        <li><span class="blue" style="background: #f1a196">水质预警</span><a href="####" target="_blank">【临海公园杨林路口】余氯超标，请检查</a><em>2019-07-11</em></li>
+                        <li><span class="blue" style="background: #f1a293">电池告警</span><a href="####" target="_blank">【兰奇桥5#检测点】剩余电池量不足，请安排更换</a><em>2019-07-06</em></li>
+                        <li><span class="blue" style="background: #e9cbd5">安全预警</span><a href="####" target="_blank">【洪武路二次供水泵站】提示未刷卡进入人员，请检查</a><em>2019-06-03</em></li>
+                        <li><span class="red" style="background: #f60">服务超时告警</span><a href="####" target="_blank">【香园路】14：20反应的违章尚未反馈处理结果，请核实</a><em>2019-06-17</em></li>
+                        <li><span class="red" style="background: #f60">服务超时告警</span><a href="####" target="_blank">【云明路江津街路口】泄漏尚未及时处理，请核实</a><em>2019-05-19</em></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block script %}
+
+<script src="{% static 'ew_show_jl/js/jquery1.9.1.js' %}"></script>
+<script src="{% static 'ew_show_jl/js/mt-tabpage.js' %}"></script>
+<script>
+
+    $(function(){
+        var oBtnFullOpen = document.getElementById('BtnFullOpen');
+        var oContent = document.getElementById('Content');
+        oBtnFullOpen.onclick = function() {
+            fullScreen(oContent);
+            oBtnFullOpen.setAttribute("style", "display:none");
+        }
+    })
+
+
+    function fullScreen(el) {
+        var rfs = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullScreen,
+                wscript;
+
+        if(typeof rfs != "undefined" && rfs) {
+            rfs.call(el);
+            return;
+        }
+
+        if(typeof window.ActiveXObject != "undefined") {
+            wscript = new ActiveXObject("WScript.Shell");
+            if(wscript) {
+                wscript.SendKeys("{F11}");
+            }
+        }
+    }
+
+    function exitFullScreen(el) {
+        var el= document,
+                cfs = el.cancelFullScreen || el.webkitCancelFullScreen || el.mozCancelFullScreen || el.exitFullScreen,
+                wscript;
+
+        if (typeof cfs != "undefined" && cfs) {
+            cfs.call(el);
+            return;
+        }
+
+        if (typeof window.ActiveXObject != "undefined") {
+            wscript = new ActiveXObject("WScript.Shell");
+            if (wscript != null) {
+                wscript.SendKeys("{F11}");
+            }
+        }
+    }
+</script>
+
+{% endblock %}

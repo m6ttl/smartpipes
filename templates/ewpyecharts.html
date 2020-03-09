@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block titile %}
+分类列表页 | 易维科技知识库
+{% endblock %}
+
+{% load staticfiles %}
+<!--crumbs start-->
+{% block custom_bread %}
+    <section>
+        <div class="wp">
+            <ul  class="crumbs">
+                <title>Proudly presented by PycCharts</title>
+                {% for jsfile_name in script_list %}
+                <script src="{{host}}/{{jsfile_name}}.js"></script>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endblock %}
+
+{% block content %}
+<section>
+	<div class="wp butler_list_box list">
+        {{{bar|safe}}}
+    </div>
+</section>
+    <section style="border: 1px solid #f00;">
+	<div class="">
+        {{myechart|safe}}}
+    </div>
+</section>
+{% endblock %}
+
+{#<html>#}
+{##}
+{#<head>#}
+{#    <meta charset="utf-8">#}
+{#    <title>Proudly presented by PycCharts</title>#}
+{#	{% for jsfile_name in script_list %}#}
+{#    <script src="{{host}}/{{jsfile_name}}.js"></script>#}
+{#    {% endfor %}#}
+{#</head>#}
+{##}
+{#<body>#}
+{#  {{myechart|safe}}#}
+{#</body>#}
+{##}
+{#</html>#}

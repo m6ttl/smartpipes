@@ -1,0 +1,13 @@
+venv/
+.idea/
+media/
+/extra_apps/
+/static/
+apps/demo/
+apps/ew_show_app/static/
+*.mp4
+*.pyc
+*.log
+*.bak
+settings.py
+db.sqlite3

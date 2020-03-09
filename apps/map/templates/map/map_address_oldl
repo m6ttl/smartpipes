@@ -1,0 +1,142 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <style type="text/css">
+        body, html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+
+        #allmap {
+            height: 80%;
+            width: 80%;
+            margin:0 auto;
+        }
+
+        #r-result {
+            width: 100%;
+            font-size: 14px;
+
+        }
+    </style>
+    
+    <title>经纬度定位</title>
+</head>
+<body>
+
+<div id="r-result">
+    
+    <center><h1>荆门流量计分布</h1></center>
+    
+</div>
+
+<div id="allmap"></div>
+
+
+
+</body>
+<script type="text/javascript"
+{#        src="http://api.map.baidu.com/api?v=2.0&ak=替换你的密钥">#}
+        src="http://api.map.baidu.com/api?v=2.0&ak=zXCUF1VxvhQDlcumXrW2pLjugOTtnMS3">
+</script>
+        
+        
+<script type="text/javascript">
+
+      var map = new BMap.Map("allmap");
+
+       //还没有从数据库读取
+      map.centerAndZoom(new BMap.Point(112.2083160000,31.0067670000), 17);
+      map.enableScrollWheelZoom(true);
+      var navigationControl = new BMap.NavigationControl({
+          // 靠左上角位置
+          anchor: BMAP_ANCHOR_TOP_LEFT,
+          // LARGE类型
+          type: BMAP_NAVIGATION_CONTROL_LARGE,
+          // 启用显示定位
+          enableGeolocation: true
+      });
+      map.addControl(navigationControl);
+  
+      function get_location() {
+
+          //数据库读取
+          var address_latitude ={{ address_latitude |safe}};
+          var address_longitude ={{ address_longitude|safe }};
+          var address_data ={{ address_data |safe}};
+  
+  
+          var point = []; //存放标注点经纬信息的数组
+          var marker = []; //存放标注点对象的数组
+          for (var i = 0; i < address_longitude.length; i++) {
+              point[i] = new BMap.Point(address_longitude[i], address_latitude[i]); //循环生成新的地图点
+              marker[i] = new BMap.Marker(point[i]); //按照地图点坐标生成标记
+              map.addOverlay(marker[i]);
+          }
+
+          for (i = 0; i < marker.length; i++) {
+              (function () {
+                  var index = i;
+                  marker[index].addEventListener('click', function () {
+                      // this.openInfoWindow(new BMap.InfoWindow(address_data[index]));
+                      alert(address_data[index]);
+                  });
+              })();
+          }
+
+       //还没有从数据库读取  标签
+          var opts = {
+               position : new BMap.Point(112.2083160000,31.0067670000),    // 指定文本标注所在的地理位置
+               offset   : new BMap.Size(30, 30)    //设置文本偏移量
+          }
+          var label = new BMap.Label("新城区", opts);  // 创建文本标注对象
+                label.setStyle({
+                color : "blue",
+                fontSize : "24px",
+                fillColor:"red",      //填充颜色。当参数为空时，圆形将没有填充效果。
+          });
+          map.addOverlay(label);
+
+          // 还没有从数据库读取  管线
+          //
+          var lineOptions = {
+              strokeColor:"blue",    //边线颜色。
+              strokeWeight: 3,       //边线的宽度，以像素为单位。
+              strokeOpacity: 0.2,    //边线透明度，取值范围0 - 1。
+              strokeStyle: 'solid' //边线的样式，solid或dashed。
+          }
+
+          var polyline = new BMap.Polyline([
+                new BMap.Point(112.2023150000,31.0043220000),
+                new BMap.Point(112.2060880000,31.0091660000),
+                new BMap.Point(112.2096820000,31.0078820000)
+          ], lineOptions);
+          // console.log(polyline, '1111111111111')
+          map.addOverlay(polyline);
+
+       //还没有从数据库读取  分区
+          var styleOptions = {
+              strokeColor:"red",    //边线颜色。
+              fillColor:"gray",      //填充颜色。当参数为空时，圆形将没有填充效果。
+              strokeWeight: 1,       //边线的宽度，以像素为单位。
+              strokeOpacity: 0.5,    //边线透明度，取值范围0 - 1。
+              fillOpacity: 0.3,      //填充的透明度，取值范围0 - 1。
+              strokeStyle: 'solid' //边线的样式，solid或dashed。
+          }
+
+          var polygon = new BMap.Polygon([
+              new BMap.Point(112.2068790000,31.0083460000),
+              new BMap.Point(112.2096820000,31.0078820000),
+              new BMap.Point(112.2102210000,31.0041210000),
+              new BMap.Point(112.2073820000,31.0032850000),
+              new BMap.Point(112.2058550000,31.0051580000)
+          ], styleOptions);  //创建多边形
+          map.addOverlay(polygon);   //增加多边形
+
+      }
+      get_location()
+  </script>
+</html>

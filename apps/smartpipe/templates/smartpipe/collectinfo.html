@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>数据展示</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <style>
+        *{margin: 0; padding: 0;}
+        body,html{width: 100%;height: 100%; color: #333;}
+        html { height: 100%;-webkit-text-size-adjust:none;word-wrap:break-word}
+        ul,li{ list-style: none;}
+        .wrap{ width: 560px;height: auto; overflow: hidden;  padding: 10px;}
+        .wrap .title{ font-weight: bold; font-size: 16px; border-bottom: 3px solid #efefef; height: 30px; line-height: 30px;}
+        .wrap ul{ height: auto; overflow: hidden; margin-bottom: 30px;}
+        .wrap ul li{ text-align: center; float: left;  position: relative; }
+        .wrap ul li span{ font-size: 14px;  height: 30px; line-height: 30px; text-align: left;}
+        .wrap ul li.time{ line-height: 30px; }
+        .wrap .ylqx{ height: 230px;}
+        .wrap .llqx{}
+        .wrap .gk{ height: 75px;}
+        .wrap .gk ul li span{position: absolute; top: 0; left: 10px; width: auto;}
+        .wrap .gk ul li{ float: left; border: 1px solid #efefef; width: 95px; height: 58px; line-height: 80px;font-size: 18px;}
+        .wrap .jbxx ul li{ width: 145px;}
+        .wrap .azxx ul li{  width: 210px;}
+        .wrap .jbxx ul li span,.wrap .azxx ul li span{ float: left;}
+        .wrap .jbxx ul li i,.wrap .azxx ul li i{ float: left; font-style: normal; line-height: 30px; font-size: 14px;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="gk">
+        <ul>
+        <li style="width: 44px; font-size: 14px; font-weight: bold; line-height: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;工况<br></br>信息</li>
+        <li class="time" style="font-size: 14px;width: 120px;"><span>最近采集时间：</span>{{t__collection_time|safe}}</li>
+        <li><span>压力(Mpa)：</span>{{t_pressure|safe}}</li>
+        <li><span>温度(℃)：</span>{{t_tem|safe}}</li>
+        <!-- <li>累计流量：{{t_tot_flow}}</li> -->
+        <li><span>电量(KW)：</span>{{t_power|safe}}</li>
+        <li><span>瞬间流量(顿)</span>：{{t_ins_flow|safe}}</li>
+    </ul>
+</div>
+        <div class="ylqx">
+    <ul>
+        <li>{{t_chart_yl|safe}}</li>
+    </ul>
+</div>
+<div class="jbxx">
+    <div class="title">基本信息</div>
+    <ul>
+        <li class="time"><span>编号：</span><i>{{t_sn|safe}}</i></li>
+        <li class="time" style="width: 245px;"><span>名称：</span><i>{{t_name|safe}}</i></li>
+        <li><span>口径：</span><i>{{t_caliber|safe}}</i></li>
+    </ul>
+</div>
+<div class="azxx">
+    <div class="title">安装信息</div>
+    <ul>
+        <!-- <li>编号：{{t_RTU_id}}</li> -->
+        <li><span>埋深(米)：</span><i>{{t_depth|safe}}</i></li>
+        <li class="time" style="width: 240px;"><span>安装时间：</span><i>{{t_install_date|safe}}</i></li>
+        <li><span>接口方式：</span><i>{{t_interface|safe}}</i></li>
+        <li><span>管道材质：</span><i>{{t_pipeline|safe}}</i></li>
+    </ul>
+</div>
+
+<!--<div class="llqx">-->
+<!--    <div class="title">流量曲线</div>-->
+<!--    <ul>-->
+<!--        <li>{{t_chart_ll|safe}}</li>-->
+<!--    </ul>-->
+<!--</div>-->
+</div>
+</body>
+</html>

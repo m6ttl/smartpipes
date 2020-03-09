@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>数据展示</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <style>
+        *{margin: 0; padding: 0;}
+        body,html{width: 100%;height: 100%; color: #333;}
+        html {  height: 100%;-webkit-text-size-adjust:none;word-wrap:break-word  }
+        ul,li{ list-style: none;}
+        .wrap{ margin: 0 auto; width: 800px; padding-top: 30px; height: auto; overflow: hidden;}
+        .wrap .title{ font-weight: bold; font-size: 16px; border-bottom: 3px solid #efefef; height: 30px; line-height: 30px;}
+        .wrap ul{ height: auto; overflow: hidden; margin-bottom: 30px;}
+        .wrap ul li{ width: 250px; float: left; margin-top: 10px;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+    <div class="title">基本信息</div>
+    <ul>
+        <li>编号：{{t_sn}}</li>
+        <li>名称：{{t_name}}</li>
+        <li>口径：{{t_caliber}}</li>
+    </ul>
+    <div class="title">安装信息</div>
+    <ul>
+        <!-- <li>编号：{{t_RTU_id}}</li> -->
+        <li>埋深：{{t_depth}}</li>
+        <li>安装时间：{{t_install_date}}</li>
+        <li>接口方式：{{t_interface}}</li>
+        <li>管道材质：{{t_pipeline}}</li>
+    </ul>
+    <div class="title">工况信息</div>
+    <ul>
+        <li>最近采集时间：{{t__collection_time}}</li>
+        <li>压力：{{t_pressure}}</li>
+        <li>温度：{{t_tem}}</li>
+        <li>瞬间流量：{{t_ins_flow}}</li>
+        <!-- <li>累计流量：{{t_tot_flow}}</li> -->
+        <li>电力剩余情况：{{t_power}}</li>
+    </ul>
+    <div class="title">压力曲线</div>
+    <ul>
+        <li>暂无数据</li>
+    </ul>
+    <div class="title">流量曲线</div>
+    <ul>
+        <li>暂无数据</li>
+    </ul>
+</div>
+</body>
+</html>

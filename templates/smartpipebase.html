@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+{% load static %}
+{% load admin_urls %}
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>	{% block titile %}{% endblock %}</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+{% block css %}
+<link href="{% static 'css/main.css' %}" charset="utf-8" rel="stylesheet">
+{% endblock %}
+{% block custom_css %} {% endblock %}
+{% block js %}
+    <script src="{% static 'js/rem.js' %}"></script>
+    <script src="{% static 'js/jquery1.9.1.js' %}"></script>
+    <script src="//at.alicdn.com/t/font_1555032_23p67drhkel.js"></script>
+{% endblock %}
+</head>
+<body>
+    <div class="headtop">
+        <div class="logo">
+            <a href="####" title="易维科技">易维科技</a>
+        </div>
+    </div>
+    <div class="header">
+        <div class="left">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-home"></use>
+            </svg>易维环境
+        </div>
+        <div class="right">
+            <div class="navBar">
+                <ul class="nav clearfix">
+                    <li class="m">
+                        <h3><a href="/smartpipe/index" title="管件浏览">管件浏览</a></h3>
+{#                        <ul class="sub">#}
+{#                            <li><a href="/smartpipe/index" title="地图导航">地图导航</a></li>#}
+{#                            <li><a href="/ew_show_jl/index" title="智慧水务应用">智慧水务应用</a></li>#}
+{#                            <li><a href="/ew_show_jl/swwl" title="水务物联网">水务物联网</a></li>#}
+{#                        </ul>#}
+                    </li>
+                    <li class="s">|</li>
+                    <li class="m">
+                        <h3><a href="/ew_show_jl/index" title="业务导航">业务导航</a></h3>
+{#                        <ul class="sub">#}
+{#                            <li><a href="#" title="安装注册">安装注册</a></li>#}
+{#                            <li><a href="#" title="使用监控">使用监控</a></li>#}
+{#                            <li><a href="#" title="管件报修">管件报修</a></li>#}
+{#                            <li><a href="#" title="管件注销">管件注销</a></li>#}
+{#                            <li><a href="#" title="告警查询">告警查询</a></li>#}
+{#                            <li><a href="#" title="分析报告">分析报告</a></li>#}
+{#                        </ul>#}
+                    </li>
+                    <li class="s">|</li>
+                    <li class="m">
+                        <h3><a href="/ew_show_jl/swwl" title="物联网导航">物联网导航</a></h3>
+{#                        <ul class="sub" style="display: none;">#}
+{#                            <li><a target="_blank" href="{% url 'index' %}" title="知识库">知识库</a></li>#}
+{#                            <li><a target="_blank" href="{% url 'course:course_detail' 60 %}"  title="管件介绍">管件介绍</a></li>#}
+{#                            <li><a target="_blank" href="#" title="资料下载">资料下载</a></li>#}
+{#                        </ul>#}
+                    </li>
+                    <li class="s">|</li>
+                    <li class="m">
+                        <h3><a href="/scen/index/" title="场景导航">场景导航</a></h3>
+{#                        <ul class="sub" style="display: none;">#}
+{#                            <li><a href="#" title="安全用水">安全用水</a></li>#}
+{#                            <li><a href="/map/index" title="漏损治理">漏损治理</a></li>#}
+{#                            <li><a href="#" title="精细管理">精细管理</a></li>#}
+{#                            <li><a href="/ew_show_jl/dma" title="DMA分区">DMA分区</a></li>#}
+{#                            <li><a href="/test" title="DMA分区">DMA分区</a></li>#}
+{#                        </ul>#}
+                    </li>
+                     <li class="m">
+                        <h3><a target="_blank" href="{% url 'course:list' %}" title="知识库">知识库</a></h3>
+{#                        <ul class="sub">#}
+{#                            <li><a target="_blank" href="{% url 'index' %}" title="知识库">知识库</a></li>#}
+{#                            <li><a href="/ew_show_jl/index" title="智慧水务应用">智慧水务应用</a></li>#}
+{#                            <li><a href="/ew_show_jl/swwl" title="水务物联网">水务物联网</a></li>#}
+{#                        </ul>#}
+                    </li>
+                    <li class="s">|</li>
+                    <li class="m">
+                        <h3><a href="#" title="联系方式">联系方式</a></h3>
+{#                        <ul class="sub" style="display: none;">#}
+{#                            <li><a href="#" title="供应商">供应商</a></li>#}
+{#                            <li><a href="#" title="服务商">服务商</a></li>#}
+{#                        </ul>#}
+                    </li>
+                    <li class="block" style="left: 251px;"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="settings">
+            <ul>
+                <li><a class="btnlogin" target="_blank" href="{% url 'users:user_info' %}" title="登录">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-account"></use>
+                        </svg>
+                    </a></li>
+                <li><a href="####" title="消息">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-remind"></use>
+                        </svg>
+                    </a></li>
+                <li><a class="btnset" target="_blank" href="/xadmin" title="设置">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-set"></use>
+                        </svg>
+                    </a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="popset">
+    </div>
+{#    <div id="divCover"></div>#}
+{#    <div class="setitem">#}
+{#        <div class="close">X</div>#}
+{#        <ul>#}
+{#            <li><input type="checkbox">管线</li>#}
+{#            <li><input type="checkbox">区域</li>#}
+{#        </ul>#}
+{#    </div>#}
+{% block content %}
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}
+    <script src="{% static 'js/SuperSlide.2.1.js' %}"></script>
+    <script src="{% static 'js/yzw.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+{% extends 'smartpipebase.html' %}
+{% load static %}
+{% block titile %} 地图导航 {% endblock %}
+{% block custom_css %}
+    <style>
+        #showDiv{ display: none; box-shadow:2px 1px 5px #009fe7; position: absolute;top: 39px;right: 20px;width: 43%;height:92%; background: #fff; z-index: 5;}
+        #close{ z-index: 6; position: absolute;top: 0;right: 0px;background: #009fe7;padding: 3px 8px;color: #fff;font-size: 15px;cursor: pointer;}
+        #hoverDiv{ display: none; padding: 10px; box-shadow:2px 1px 5px #aaa; position: absolute;top: 50%;left: 50%;margin-top: -270px;margin-left: -400px;width: 40%;height: 50%; background: #fff; z-index: 99999999;pointer-events: none;}
+        .jiantou_left{position: absolute; top: 70%; width: 0;height: 0;left: -52px;    border-top: 23px solid transparent;border-bottom: 10px solid transparent;border-right: 55px solid #fff;}
+@media screen and (min-device-width:1920px) {
+    #showDiv {
+        top:100px;
+        width:31%;
+        height:80%;
+    }
+    .jiantou_left{
+        left: -94px;
+        border-top: 40px solid transparent;
+        border-bottom: 30px solid transparent;
+        border-right: 100px solid #fff;
+    }
+}
+    </style>
+{% endblock %}
+{% block content %}
+<div id="showDiv">
+    <div class="jiantou_left"></div>
+    <div id="close" onclick="test()">X</div>
+    <iframe id="yzwframe" width="100%" height="100%" src=""  frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="auto" ></iframe>
+
+</div>
+<div id="hoverDiv">
+<iframe id="hoverframe" width="100%" height="100%" src=""  frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="auto" ></iframe>
+</div>
+{#<div id="allmap"></div>#}
+    <iframe align="center" width="100%" height="90%" src="{% static 'ew_show_jl/ksh/map_leaflet.html' %}"  frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+
+{#    <iframe align="center" width="100%" height="90%" src="http://47.110.40.193:8866/voila/render/voila_smartpipe.ipynb"  frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>#}
+{% endblock %}
+
+{##}
+{#{% block script %}#}
+{#<script src="http://api.map.baidu.com/api?v=2.0&ak=zXCUF1VxvhQDlcumXrW2pLjugOTtnMS3"></script>#}
+{#    <script type="text/javascript">#}
+{#        function test() {#}
+{#        document.getElementById("showDiv").style.display = 'none';#}
+{#    }#}
+{#        var map = new BMap.Map("allmap");#}
+{#        // map.setMapStyle({style:'dark'})#}
+{##}
+{#        var c_longitude = [{{ c_longitude |safe}}]#}
+{#        var c_latitude =[{{ c_latitude |safe}}]#}
+{#        for (var i = 0; i < c_longitude.length; i++) {#}
+{#            map.centerAndZoom(new BMap.Point(c_longitude[i], c_latitude[i]), 17);#}
+{#            map.enableScrollWheelZoom(true);#}
+{#        }#}
+{##}
+{#        //map.centerAndZoom(new BMap.Point(112.2083160000,31.0067670000), 17);#}
+{#        //map.enableScrollWheelZoom(true);#}
+{#        var navigationControl = new BMap.NavigationControl({#}
+{#            // 靠左上角位置#}
+{#            anchor: BMAP_ANCHOR_TOP_LEFT,#}
+{#            // LARGE类型#}
+{#            type: BMAP_NAVIGATION_CONTROL_LARGE,#}
+{#            // 启用显示定位#}
+{#            enableGeolocation: true#}
+{#        });#}
+{#        map.addControl(navigationControl);#}
+{##}
+{#        function get_location() {#}
+{#                      //数据库读取#}
+{#                      var address_latitude ={{ address_latitude |safe}}; //纬度#}
+{#                      var address_longitude ={{ address_longitude|safe }};#}
+{#                      var address_data ={{ address_data |safe}};#}
+{#                      var address_id ={{ address_id |safe}};  //id#}
+{##}
+{#                      var point = []; //存放标注点经纬信息的数组#}
+{#                      var marker = []; //存放标注点对象的数组#}
+{#                      //替换初始红点，自定义图标#}
+{#                      var myIcon = new BMap.Icon("{% static 'images/icon-guandao.png' %}", new BMap.Size(50,50));#}
+{#                      for (var i = 0; i < address_longitude.length; i++) {#}
+{#                          point[i] = new BMap.Point(address_longitude[i], address_latitude[i]); //循环生成新的地图点#}
+{#                          marker[i] = new BMap.Marker(point[i],{icon:myIcon}); //按照地图点坐标生成标记，采用自定义图标#}
+{#                          map.addOverlay(marker[i]);#}
+{#                      }#}
+{##}
+{#                      for (i = 0; i < marker.length; i++) {#}
+{#                          (function () {#}
+{#                              var index = i;#}
+{#                              marker[index].addEventListener('click', function () {#}
+{#                                  //数据绑定展示#}
+{#                                  //this.openInfoWindow(new BMap.InfoWindow(address_data[index]));#}
+{#                                  document.getElementById("showDiv").style.display ='block';#}
+{#                                  document.getElementById("yzwframe").setAttribute("src","smartpipe/pipe/"+address_id[index])#}
+{#                                  //document.getElementById("showDiv").innerHTML = address_data[index];#}
+{#                              });#}
+{#                              //鼠标划上去#}
+{#                              /* marker[index].addEventListener('mouseover', function () {#}
+{#                                  document.getElementById("hoverDiv").style.display ='block';#}
+{#                                  document.getElementById("hoverframe").setAttribute("src","smartpipe/pipeS/"+address_id[index])#}
+{#                              });#}
+{#                              //鼠标划上去#}
+{#                             marker[index].addEventListener('mouseout', function () {#}
+{#                                  document.getElementById("hoverDiv").style.display ='none';#}
+{#                                  document.getElementById("hoverframe").setAttribute("src","")#}
+{#                              });#}
+{#                              */#}
+{#                          })();#}
+{##}
+{#                      }#}
+{##}
+{##}
+{##}
+{#            //还没有从数据库读取  标签,现在从数据库取#}
+{#            var p_longitude = {{ p_longitude |safe}}#}
+{#            var p_latitude ={{ p_latitude |safe}}#}
+{#            var p_address ={{ p_address |safe}}#}
+{##}
+{#            var opts = []; //存放标注点经纬信息的数组#}
+{#            for (var i = 0; i < p_longitude.length; i++) {#}
+{#                opts[i] = {position: new BMap.Point(p_longitude[i], p_latitude[i]), offset: new BMap.Size(30, 30)}#}
+{#                var label = new BMap.Label(p_address[i], opts[i]);#}
+{#                label.setStyle({color: "blue", fontSize: "18", fillColor: "FF7F24",});#}
+{#                map.addOverlay(label);#}
+{#            }#}
+{##}
+{##}
+{##}
+{#            // 还没有从数据库读取  管线#}
+{#            /*#}
+{#            var lineOptions = {#}
+{#                strokeColor:"blue",    //边线颜色。#}
+{#                strokeWeight: 3,       //边线的宽度，以像素为单位。#}
+{#                strokeOpacity: 0.2,    //边线透明度，取值范围0 - 1。#}
+{#                strokeStyle: 'solid' //边线的样式，solid或dashed。#}
+{#            }#}
+{##}
+{#            var polyline = new BMap.Polyline([#}
+{#                  new BMap.Point(112.2023150000,31.0043220000),#}
+{#                  new BMap.Point(112.2060880000,31.0091660000),#}
+{#                  new BMap.Point(112.2096820000,31.0078820000)#}
+{#            ], lineOptions);#}
+{#            // console.log(polyline, '1111111111111')#}
+{#            map.addOverlay(polyline);#}
+{#  */#}
+{##}
+{#            var styleOptions = {#}
+{#                strokeColor: "#FF7F24",    //边线颜色。#}
+{#                fillColor: "#FF7F24",      //填充颜色。当参数为空时，圆形将没有填充效果。#}
+{#                strokeWeight: 1,       //边线的宽度，以像素为单位。#}
+{#                strokeOpacity: 0.5,    //边线透明度，取值范围0 - 1。#}
+{#                fillOpacity: 0.3,      //填充的透明度，取值范围0 - 1。#}
+{#                strokeStyle: 'solid' //边线的样式，solid或dashed。#}
+{#            }#}
+{#            //测试打印数据#}
+{#            console.log("经度："+{{ p_longitude |safe}} +"纬度："+{{ p_latitude |safe}} +"pname:"+ {{ p_name |safe}}+"paddress:"+{{ p_address |safe}});#}
+{##}
+{#           var polygon = new BMap.Polygon([#}
+{#              new BMap.Point(112.2068790000,31.0083460000),#}
+{#              new BMap.Point(112.2096820000,31.0078820000),#}
+{#              new BMap.Point(112.2102210000,31.0041210000),#}
+{#              new BMap.Point(112.2073820000,31.0032850000),#}
+{#              new BMap.Point(112.2058550000,31.0051580000)#}
+{#          ], styleOptions);  //创建多边形#}
+{#          console.log(polygon);#}
+{#          map.addOverlay(polygon);   //增加多边形#}
+{##}
+{##}
+{#            // 设置自定义版权#}
+{#            var cr = new BMap.CopyrightControl({ anchor: BMAP_ANCHOR_TOP_RIGHT });   //设置版权控件位置#}
+{#            map.addControl(cr); //添加版权控件#}
+{##}
+{#            var bs = map.getBounds();   //返回地图可视区域#}
+{#            cr.addCopyright({#}
+{#                id: 1, content: "<a href='#' style='display:none;font-size:20px;background:yellow;position: absolute;\n" +#}
+{#                    "    top: 11px;\n" +#}
+{#                    "    right: 90px;'>易维科技</a>", bounds: bs#}
+{#            });#}
+{#            //Copyright(id,content,bounds)类作为CopyrightControl.addCopyright()方法的参数#}
+{##}
+{#            var mapType1 = new BMap.MapTypeControl(#}
+{#                {#}
+{#                    mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP],#}
+{#                    anchor: BMAP_ANCHOR_TOP_RIGHT#}
+{#                }#}
+{#            );#}
+{##}
+{#            var overView = new BMap.OverviewMapControl();#}
+{#            var overViewOpen = new BMap.OverviewMapControl({ isOpen: true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT });#}
+{#            //添加地图类型和缩略图#}
+{#            map.addControl(mapType1);          //2D图，混合图#}
+{#            //map.addControl(overView);          //添加默认缩略地图控件#}
+{#            //map.addControl(overViewOpen);      //右下角，打开#}
+{##}
+{#        }#}
+{#        get_location()#}
+{##}
+{#    </script>#}
+{#{% endblock %}#}
