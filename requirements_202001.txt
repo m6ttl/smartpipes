@@ -93,7 +93,7 @@ pytz==2019.3
 PyUserInput==0.1.9
 pywin32==227
 pywinpty==0.5.7
-PyYAML==3.12
+PyYAML==5.4
 pyzmq==18.1.1
 records==0.5.3
 Send2Trash==1.5.0
