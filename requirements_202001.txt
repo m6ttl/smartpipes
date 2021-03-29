@@ -83,7 +83,7 @@ prompt-toolkit==3.0.2
 pyecharts==1.6.0
 pyecharts-javascripthon==0.0.6
 pyecharts-jupyter-installer==0.0.3
-Pygments==2.5.2
+Pygments==2.7.4
 PyMySQL==0.9.3
 pyperclip==1.5.26
 pyrsistent==0.15.7
